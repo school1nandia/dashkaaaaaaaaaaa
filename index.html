@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6 Малгайн сэтгэхүй - Багийн ажлын талбар</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800;900&family=Roboto:wght@400;500;700;900&display=swap&subset=cyrillic,cyrillic-ext');
+    
+    * {
+      font-family: 'Roboto', 'Noto Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    }
+
+    body {
+      background: #f1f5f9;
+      color: #0f172a;
+    }
+
+    .light-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    .modal-enter {
+      animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.96) translateY(8px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      #printArea, #printArea * {
+        visibility: visible;
+      }
+      #printArea {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-start p-3 md:p-6 select-none">
+
+  <!-- Header -->
+  <header class="w-full max-w-5xl flex flex-wrap items-center justify-between py-3 mb-6 border-b border-slate-200 gap-3">
+    <div class="flex items-center gap-3">
+      <div class="w-11 h-11 rounded-2xl bg-indigo-600 flex items-center justify-center shadow-md shadow-indigo-600/20 text-white text-2xl">
+        <i class="ph-bold ph-graduation-cap"></i>
+      </div>
+      <div>
+        <h1 class="text-xl md:text-2xl font-black text-slate-900 tracking-tight">Тоон оюуны өмч</h1>
+        <p class="text-xs text-slate-500 font-medium">Багийн ажлын чиглэл, дэг & даалгавар гүйцэтгэх талбар</p>
+      </div>
+    </div>
+
+    <!-- PPT Татах товч толгой хэсэгт -->
+    <a href="https://docs.google.com/presentation/d/1ZZtOy2TX1mrxa7vnGd8lESm-kaHduSyB/export/pptx" target="_blank" class="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs shadow-md transition-all flex items-center gap-2">
+      <i class="ph-bold ph-download-simple text-base"></i>
+      <span>Танилцуулга слайд татах (PPTX)</span>
+    </a>
+  </header>
+
+  <!-- Үндсэн агуулга -->
+  <main class="w-full max-w-5xl space-y-6">
+
+    <!-- 1. Хичээлийн дэг самбар -->
+    <div class="light-card rounded-2xl p-5 border-2 border-indigo-100 bg-gradient-to-br from-white via-indigo-50/20 to-slate-50">
+      <div class="flex items-center gap-2.5 pb-3 mb-3 border-b border-indigo-100">
+        <i class="ph-bold ph-clipboard-text text-indigo-600 text-xl"></i>
+        <h3 class="text-sm md:text-base font-extrabold text-slate-900 uppercase tracking-tight">Баримтлах үндсэн зарчим ба дэг</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-xs">
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+          <div class="font-bold text-indigo-600 mb-1 flex items-center gap-1.5">
+            <i class="ph-bold ph-hourglass-high"></i> Судлах цаг (5 мин)
+          </div>
+          <p class="text-slate-600 leading-relaxed font-medium">Кейс болон өгөгдсөн 3 асуултыг багаараа судалж бэлтгэнэ.</p>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+          <div class="font-bold text-indigo-600 mb-1 flex items-center gap-1.5">
+            <i class="ph-bold ph-presentation-chart"></i> Илтгэх цаг (2 мин)
+          </div>
+          <p class="text-slate-600 leading-relaxed font-medium">Малгайн онцлогт тохирсон дүгнэлтээ 2 минутад танилцуулна.</p>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+          <div class="font-bold text-indigo-600 mb-1 flex items-center gap-1.5">
+            <i class="ph-bold ph-note-pencil"></i> Тэмдэглэл хөтлөх
+          </div>
+          <p class="text-slate-600 leading-relaxed font-medium">Бусад багийн яриаг анхааралтай сонсож, гол санааг тэмдэглэнэ.</p>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+          <div class="font-bold text-indigo-600 mb-1 flex items-center gap-1.5">
+            <i class="ph-bold ph-ear"></i> Анхааралтай суух
+          </div>
+          <p class="text-slate-600 leading-relaxed font-medium">Чимээгүй, анхааралтай сууж, бусдын санал бодлыг хүндэтгэнэ.</p>
+        </div>
+
+        <div class="bg-white p-3 rounded-xl border border-slate-200 shadow-sm">
+          <div class="font-bold text-emerald-600 mb-1 flex items-center gap-1.5">
+            <i class="ph-bold ph-sparkle"></i> Идэвхтэй оролцох
+          </div>
+          <p class="text-slate-600 leading-relaxed font-medium">Өөрийн малгайн өнцгөөс чөлөөтэй, идэвхтэй оролцоно.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Баг сонгох хэсэг -->
+    <div>
+      <div class="flex items-center justify-between mb-3 px-1">
+        <h2 class="text-base font-extrabold text-slate-900 flex items-center gap-2">
+          <span>Өөрийн багийн өнгө дээр дарж ажлаа эхлүүлнэ үү</span>
+          <i class="ph-bold ph-arrow-down text-indigo-600"></i>
+        </h2>
+        <span class="text-xs text-slate-500 font-medium">Товч дээр дарахад асуултууд гарна</span>
+      </div>
+
+      <!-- 5 Өнгийн том сонголтууд -->
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-3.5">
+        
+        <!-- Цагаан -->
+        <button onclick="openHatModal('white')" class="light-card rounded-2xl p-5 text-left border-2 hover:border-slate-400 hover:shadow-lg transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-slate-100 border border-slate-300 text-slate-800 flex items-center justify-center text-2xl mb-3 shadow-sm group-hover:scale-105 transition-transform">
+              <i class="ph-bold ph-file-text"></i>
+            </div>
+            <h3 class="font-extrabold text-base text-slate-900 mb-1">Цагаан малгай</h3>
+            <p class="text-xs text-slate-500 leading-relaxed">Баримт, тоо мэдээлэл ба бодит байдал</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-indigo-600 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            <span>Ажиллах</span> <i class="ph-bold ph-arrow-right"></i>
+          </span>
+        </button>
+
+        <!-- Хар -->
+        <button onclick="openHatModal('black')" class="rounded-2xl p-5 text-left bg-slate-800 hover:bg-slate-900 text-white shadow-md hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-slate-700 text-white flex items-center justify-center text-2xl mb-3 shadow-sm group-hover:scale-105 transition-transform">
+              <i class="ph-bold ph-shield-warning"></i>
+            </div>
+            <h3 class="font-extrabold text-base text-white mb-1">Хар малгай</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">Эрсдэл, болгоомжлол ба сөрөг үр дагавар</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-indigo-300 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            <span>Ажиллах</span> <i class="ph-bold ph-arrow-right"></i>
+          </span>
+        </button>
+
+        <!-- Шар -->
+        <button onclick="openHatModal('yellow')" class="rounded-2xl p-5 text-left bg-amber-400 hover:bg-amber-500 text-amber-950 shadow-md hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-amber-300 text-amber-950 flex items-center justify-center text-2xl mb-3 shadow-sm group-hover:scale-105 transition-transform">
+              <i class="ph-bold ph-sun"></i>
+            </div>
+            <h3 class="font-extrabold text-base text-amber-950 mb-1">Шар малгай</h3>
+            <p class="text-xs text-amber-900 leading-relaxed font-medium">Өөдрөг үзэл, давуу тал ба ашиг тус</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-amber-950 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            <span>Ажиллах</span> <i class="ph-bold ph-arrow-right"></i>
+          </span>
+        </button>
+
+        <!-- Ногоон -->
+        <button onclick="openHatModal('green')" class="rounded-2xl p-5 text-left bg-emerald-600 hover:bg-emerald-700 text-white shadow-md hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-emerald-500 text-white flex items-center justify-center text-2xl mb-3 shadow-sm group-hover:scale-105 transition-transform">
+              <i class="ph-bold ph-lightbulb"></i>
+            </div>
+            <h3 class="font-extrabold text-base text-white mb-1">Ногоон малгай</h3>
+            <p class="text-xs text-emerald-100 leading-relaxed font-medium">Шинэ санаа, бүтээлч шийдэл ба хувилбар</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-emerald-200 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            <span>Ажиллах</span> <i class="ph-bold ph-arrow-right"></i>
+          </span>
+        </button>
+
+        <!-- Цэнхэр -->
+        <button onclick="openHatModal('blue')" class="rounded-2xl p-5 text-left bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-xl transition-all group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-500 text-white flex items-center justify-center text-2xl mb-3 shadow-sm group-hover:scale-105 transition-transform">
+              <i class="ph-bold ph-compass"></i>
+            </div>
+            <h3 class="font-extrabold text-base text-white mb-1">Цэнхэр малгай</h3>
+            <p class="text-xs text-blue-100 leading-relaxed font-medium">Дүгнэлт, үйл явцын удирдлага & шийдвэр</p>
+          </div>
+          <span class="mt-4 text-xs font-bold text-blue-200 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            <span>Ажиллах</span> <i class="ph-bold ph-arrow-right"></i>
+          </span>
+        </button>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ==================== БАГИЙН АЖЛЫН МОДАЛ ЦОНХ ==================== -->
+  <div id="hatWorkModal" class="fixed inset-0 z-50 flex items-center justify-center p-3 md:p-5 bg-slate-900/60 backdrop-blur-sm hidden">
+    <div id="printArea" class="light-card w-full max-w-3xl max-h-[92vh] rounded-3xl overflow-hidden shadow-2xl flex flex-col modal-enter">
+      
+      <!-- Modal Header -->
+      <div id="modalHeader" class="p-5 flex items-start justify-between border-b border-slate-100">
+        <div class="flex items-center gap-3">
+          <div id="modalIconBox" class="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl shadow-sm"></div>
+          <div>
+            <h3 id="modalTitle" class="text-xl font-extrabold text-slate-900"></h3>
+            <p id="modalSubtitle" class="text-xs text-slate-500 font-medium mt-0.5"></p>
+          </div>
+        </div>
+        <button onclick="closeHatModal()" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-600 flex items-center justify-center transition-colors">
+          <i class="ph-bold ph-x text-lg"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-5 md:p-6 overflow-y-auto space-y-4">
+        
+        <!-- PPT холбоос карт -->
+        <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-4 flex flex-wrap items-center justify-between gap-3 shadow-sm">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center text-xl shadow-md shrink-0">
+              <i class="ph-bold ph-presentation"></i>
+            </div>
+            <div>
+              <h4 class="text-xs md:text-sm font-extrabold text-amber-950">Хичээлийн танилцуулга слайд</h4>
+              <p class="text-[11px] text-amber-800 font-medium">Кейс болон жишээ танилцуулга файл</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <a href="https://docs.google.com/presentation/d/1ZZtOy2TX1mrxa7vnGd8lESm-kaHduSyB/export/pptx" target="_blank" class="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5">
+              <i class="ph-bold ph-download-simple text-sm"></i>
+              <span>Татах (PPTX)</span>
+            </a>
+            <a href="https://docs.google.com/presentation/d/1ZZtOy2TX1mrxa7vnGd8lESm-kaHduSyB/edit?usp=sharing" target="_blank" class="px-3.5 py-2 rounded-xl bg-white border border-amber-300 hover:bg-amber-100 text-amber-950 font-bold text-xs transition-all flex items-center gap-1.5">
+              <i class="ph-bold ph-arrow-square-out text-sm"></i>
+              <span>Нээж үзэх</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Зорилго -->
+        <div class="bg-indigo-50/70 border border-indigo-100 rounded-2xl p-4">
+          <div class="text-xs font-bold uppercase tracking-wider text-indigo-700 mb-1 flex items-center gap-1.5">
+            <i class="ph-bold ph-target"></i> Багийн үндсэн зорилго
+          </div>
+          <p id="modalGoal" class="text-sm text-slate-700 leading-relaxed font-semibold"></p>
+        </div>
+
+        <!-- Сурагчийн нэр бичих талбар -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3 flex flex-wrap items-center gap-3">
+          <label class="text-xs font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1.5">
+            <i class="ph-bold ph-users"></i> Багийн гишүүд / Сурагчийн нэр:
+          </label>
+          <input type="text" id="memberNamesInput" placeholder="Жишээ: Бат, Анужин, Тэмүүлэн..." class="flex-1 min-w-[200px] bg-white border border-slate-200 rounded-xl px-3 py-1.5 text-xs md:text-sm font-bold text-slate-800 outline-none focus:ring-2 focus:ring-indigo-500" />
+        </div>
+
+        <!-- 3 Асуулт ба Хариулт бичих талбарууд -->
+        <div class="space-y-4">
+          <div class="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
+            <i class="ph-bold ph-pencil-simple-line"></i> Чиглүүлсэн 3 үндсэн асуулт ба багийн хариулт
+          </div>
+          
+          <div id="questionsContainer" class="space-y-4">
+            <!-- Динамикаар гарч ирнэ -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 bg-slate-50 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+        <span id="saveStatus" class="text-xs font-semibold text-emerald-600">Бичсэн хариулт энэ төхөөрөмжид автоматаар хадгалагдана.</span>
+        
+        <div class="flex items-center gap-2">
+          <!-- Хуулах товч -->
+          <button onclick="copyAnswersToClipboard()" class="px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 font-bold text-xs transition-all flex items-center gap-1.5">
+            <i class="ph-bold ph-copy"></i>
+            <span>Хариултыг хуулах</span>
+          </button>
+          
+          <!-- Хэвлэх / PDF -->
+          <button onclick="window.print()" class="px-3.5 py-2.5 rounded-xl bg-white border border-slate-200 hover:bg-slate-100 text-slate-700 font-bold text-xs transition-all flex items-center gap-1.5">
+            <i class="ph-bold ph-printer"></i>
+            <span>Хэвлэх / PDF</span>
+          </button>
+
+          <!-- Хадгалах товч -->
+          <button onclick="saveAnswers()" class="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-600/20 transition-all flex items-center gap-1.5">
+            <i class="ph-bold ph-floppy-disk"></i>
+            <span>Хадгалах</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // 5 Малгайн дэлгэрэнгүй өгөгдөл
+    const HATS_DATA = {
+      white: {
+        id: 'white',
+        name: 'Цагаан малгай',
+        subtitle: 'Баримт, тоо мэдээлэл ба бодит байдал',
+        colorClass: 'bg-slate-100 text-slate-800 border border-slate-300',
+        icon: 'ph-file-text',
+        goal: 'Сэтгэл хөдлөл, хувийн таамаглалгүйгээр зөвхөн баримт, тоо мэдээлэл, албан ёсны дүрмийг тодорхойлох.',
+        questions: [
+          'Canva-ийн албан ёсны цахим хуудас (canva.com) дээр жилийн эрх нь яг ямар үнэтэй байдаг вэ?',
+          'Энэхүү зарыг тавьж буй хүн ямар замаар ийм хямд эрхийг зардаг вэ?',
+          'Canva платформын үйлчилгээний нөхцөл (Terms of Service)-д хувийн болон боловсролын багцыг бусдад дамлан худалдахыг зөвшөөрсөн байдаг уу?'
+        ]
+      },
+      black: {
+        id: 'black',
+        name: 'Хар малгай',
+        subtitle: 'Эрсдэл, болгоомжлол ба сөрөг үр дагавар',
+        colorClass: 'bg-slate-800 text-white',
+        icon: 'ph-shield-warning',
+        goal: 'Болзошгүй эрсдэл, сул тал, хууль эрх зүйн болон аюулгүй байдлын асуудлыг шүүмжлэлтэй үнэлэх.',
+        questions: [
+          '30,000 төгрөг төлөөд авах нь хэрэглэгчид өөрт нь ямар эрсдэлтэй вэ?',
+          'Энэ үйлдэл нь тоон оюуны өмчийн үүднээс бүтээгчид ямар хохирол учруулж байна вэ?',
+          'Хэрэв багшийн/сургуулийн үнэгүй эрхийг дамлаж байгаа бол энэ нь тухайн сургууль, багшийн нэр хүнд болон бусад жинхэнэ суралцагчдад ямар хор уршигтай вэ?'
+        ]
+      },
+      yellow: {
+        id: 'yellow',
+        name: 'Шар малгай',
+        subtitle: 'Өөдрөг үзэл, давуу тал ба ашиг тус',
+        colorClass: 'bg-amber-400 text-amber-950',
+        icon: 'ph-sun',
+        goal: 'Хүмүүс яагаад ийм сонголт хийдэг болох, хэрэглэгчдэд ямар боломж авчирдаг тухай эерэг өнцгөөс харах.',
+        questions: [
+          'Оюутан, сурагчид яагаад албан ёсны үнээр бус ийм зар хайж авдаг вэ?',
+          'Pro эрх авснаар хүүхдүүд, залуучууд ямар давуу тал, боломжуудыг эдэлдэг вэ?',
+          'Хямд үнэ нь дижитал хэрэглүүрийг олон хүнд хүртээмжтэй болгоход ямар түлхэц болж байна вэ?'
+        ]
+      },
+      green: {
+        id: 'green',
+        name: 'Ногоон малгай',
+        subtitle: 'Шинэ санаа, бүтээлч шийдэл ба хувилбарууд',
+        colorClass: 'bg-emerald-600 text-white',
+        icon: 'ph-lightbulb',
+        goal: 'Хууль зөрчихгүйгээр, оюуны өмчийг хүндэтгэн хямд эсвэл үнэгүй ашиглах ямар бүтээлч арга замууд байгааг олох.',
+        questions: [
+          'Хууль бус "30,000₮"-ийн эрх авахын оронд оюутан, сурагчид, багш нар Canva-г үнэгүй бөгөөд хууль ёсоор ашиглах ямар боломж байдаг вэ?',
+          'Canva-аас өөр ямар хууль ёсны, нээлттэй эхийн үнэгүй дижитал дизайны хэрэгслүүд байна вэ?',
+          'Энэ төрлийн оюуны өмчийн зөрчилтэй заруудыг таслан зогсоохын тулд сошиал орчинд ямар бүтээлч арга хэмжээ/хөдөлгөөн өрнүүлж болох вэ?'
+        ]
+      },
+      blue: {
+        id: 'blue',
+        name: 'Цэнхэр малгай',
+        subtitle: 'Дүгнэлт, үйл явцын удирдлага ба шийдвэр',
+        colorClass: 'bg-blue-600 text-white',
+        icon: 'ph-compass',
+        goal: 'Бүх малгайн саналыг нэгтгэн дүгнэж, цаашид хэрэгжүүлэх бодит шийдвэр, үйл ажиллагааны чигийг тодорхойлох.',
+        questions: [
+          'Бүх баримт, эрсдэл, давуу талуудыг сонссоны дараа бид "Canva Pro 30,000₮ гэсэн зар"-ыг дэмжих үү, эсвэл түүнээс татгалзах уу?',
+          'Бид өөрсдөө цахим орчинд "Тоон оюуны өмч"-ийг дээдэлсэн, хариуцлагатай иргэн байхын тулд яг ямар 3 алхам хийж чадах вэ?',
+          'Манай сургууль/анги хамт олон албан ёсны боловсролын эрхийг хууль ёсоор авахад бид яаж нөлөөлж, зохион байгуулж чадах вэ?'
+        ]
+      }
+    };
+
+    let activeHatId = null;
+
+    function openHatModal(hatId) {
+      const hat = HATS_DATA[hatId];
+      if (!hat) return;
+
+      activeHatId = hatId;
+
+      document.getElementById('modalTitle').textContent = hat.name;
+      document.getElementById('modalSubtitle').textContent = hat.subtitle;
+      document.getElementById('modalGoal').textContent = hat.goal;
+
+      const iconBox = document.getElementById('modalIconBox');
+      iconBox.className = `w-12 h-12 rounded-2xl flex items-center justify-center text-2xl shadow-sm ${hat.colorClass}`;
+      iconBox.innerHTML = `<i class="ph-bold ${hat.icon}"></i>`;
+
+      // Хадгалсан хариулт ачаалах
+      const savedData = JSON.parse(localStorage.getItem(`hat_answers_${hatId}`) || '{}');
+      document.getElementById('memberNamesInput').value = savedData.members || '';
+
+      const container = document.getElementById('questionsContainer');
+      container.innerHTML = '';
+
+      hat.questions.forEach((q, idx) => {
+        const item = document.createElement('div');
+        item.className = 'bg-white border border-slate-200 rounded-2xl p-4 shadow-sm space-y-2';
+
+        const ans = savedData[`q_${idx}`] || '';
+
+        item.innerHTML = `
+          <div class="flex items-start gap-2.5">
+            <div class="w-6 h-6 rounded-lg bg-indigo-50 text-indigo-700 font-bold text-xs flex items-center justify-center shrink-0 border border-indigo-200 mt-0.5">
+              ${idx + 1}
+            </div>
+            <p class="text-xs md:text-sm text-slate-900 font-bold leading-relaxed">${q}</p>
+          </div>
+          <div class="pl-8 pt-1">
+            <textarea id="answer_${idx}" rows="3" placeholder="Энд багийнхаа хариултыг бичнэ үү..." oninput="autoSave()" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs md:text-sm text-slate-900 focus:bg-white focus:ring-2 focus:ring-indigo-500 outline-none resize-none transition-all">${ans}</textarea>
+          </div>
+        `;
+        container.appendChild(item);
+      });
+
+      document.getElementById('saveStatus').textContent = 'Бичсэн хариулт автоматаар хадгалагдана.';
+      document.getElementById('hatWorkModal').classList.remove('hidden');
+    }
+
+    function closeHatModal() {
+      document.getElementById('hatWorkModal').classList.add('hidden');
+      activeHatId = null;
+    }
+
+    function autoSave() {
+      if (!activeHatId) return;
+      const data = {
+        members: document.getElementById('memberNamesInput').value.trim()
+      };
+      HATS_DATA[activeHatId].questions.forEach((_, idx) => {
+        const field = document.getElementById(`answer_${idx}`);
+        if (field) data[`q_${idx}`] = field.value.trim();
+      });
+      localStorage.setItem(`hat_answers_${activeHatId}`, JSON.stringify(data));
+      document.getElementById('saveStatus').textContent = '✅ Хадгалагдлаа';
+    }
+
+    function saveAnswers() {
+      autoSave();
+      alert('Багийн хариулт амжилттай хадгалагдлаа!');
+    }
+
+    function copyAnswersToClipboard() {
+      if (!activeHatId) return;
+      const hat = HATS_DATA[activeHatId];
+      const members = document.getElementById('memberNamesInput').value.trim();
+
+      let text = `【${hat.name} - Багийн дүгнэлт】\n`;
+      if (members) text += `Багийн гишүүд: ${members}\n\n`;
+      text += `Зорилго: ${hat.goal}\n\n`;
+
+      hat.questions.forEach((q, idx) => {
+        const field = document.getElementById(`answer_${idx}`);
+        const ans = field ? field.value.trim() : '';
+        text += `Асуулт ${idx + 1}: ${q}\nХариулт: ${ans || '(Хариулт бичээгүй)'}\n\n`;
+      });
+
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Багийн бүх хариултууд санах ойд (Clipboard) хуулагдлаа! Багш руугаа эсвэл чат руу шууд Paste хийх боломжтой.');
+      });
+    }
+
+    // Modal гадуур дарахад хаах
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('hatWorkModal');
+      if (e.target === modal) {
+        closeHatModal();
+      }
+    });
+  </script>
+</body>
+</html>
